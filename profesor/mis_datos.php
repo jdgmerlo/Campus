@@ -60,6 +60,9 @@ if (empty($_SESSION['nombre'])) {
                 echo "</table>";
                 ?>
 
+                <br />
+                <br />
+                <a href="datos_modificar.php" class="btn btn-primary btn-lg" role="button">Modificar Datos</a>
             </div>
             <div class="col-md-2">
                 <strong>VACIO</strong>

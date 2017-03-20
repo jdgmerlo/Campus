@@ -39,6 +39,17 @@ if (empty($_SESSION['nombre'])) {
             </div>
             <div class="col-md-8">
 
+                <?php
+                if (isset($_GET['error']) == 9) {
+                    echo " <h4><span class='label label-danger'>Contraseña Actual Incorrecta</span></h4>";
+                }
+                ?>
+                <?php
+                if (isset($_GET['var']) == 7) {
+                    echo " <h4><span class='label label-success'>Contraseña Modificada Con Éxito</span></h4>";
+                }
+                ?>
+
 
             </div>
             <div class="col-md-2">
@@ -48,7 +59,7 @@ if (empty($_SESSION['nombre'])) {
 
 
 
-       <?php include("../footer.php") ?>
+        <?php include("../footer.php") ?>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
