@@ -27,8 +27,9 @@
                 <div id="cabecera-principal">
                     <div class="row" >
                         <div class="col-lg-12">
-                            <p class="lead"><small>Zapiola 1420 - Libertad -Merlo - Bs. As. - C.P: 1716  - Tel: (0220)-4942076</small></p>
-                            <p class="lead"><small>-2017-</small></p>
+                            <!--<p class="lead"><small>Zapiola 1420 - Libertad -Merlo - Bs. As. - C.P: 1716  - Tel: (0220)-4942076</small></p>
+                <p class="lead"><small>-2017-</small></p>-->
+                            <h3 id="titulo">Plataforma Interactiva</h3>
                         </div>
                     </div>
                 </div>
@@ -38,12 +39,12 @@
             <br />
 
             <div id="logo">
-                <image src="imagenes/escudo.jpg" />
+                <a href="http://www.isft177.edu.ar/"><image src="imagenes/escudo.jpg" /></a>
             </div>
 
 
             <div id="cartel_bienvenida">
-                <h2><span class="label label-default">Plataforma Interactiva</span></h2>
+
                 <br />
                 <span class="glyphicon glyphicon-menu-down"></span>
             </div>

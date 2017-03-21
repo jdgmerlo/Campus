@@ -92,9 +92,9 @@ if (empty($_SESSION['nombre'])) {
         </div>
 
         <?php include("../footer.php") ?>
-        <script>
+        <!--<script>
             alert('Los Datos Se Modificaran En La Próxima Sesion!!!');
-        </script>
+        </script>-->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </body>

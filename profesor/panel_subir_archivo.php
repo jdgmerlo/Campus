@@ -44,7 +44,7 @@ if (empty($_SESSION['nombre'])) {
                     <div class="form-group">
                         <label for="exampleInputFile">Enviar un Nuevo Archivo</label>
                         <input type="file" id="exampleInputFile" name="userfile">
-                        <p class="help-block">Formatos: .jpf  .pdf </p>
+                        <p class="help-block">Formatos: .jpg  .pdf </p>
                     </div>
 
                     <br />

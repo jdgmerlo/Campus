@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
         $mensaje = $_POST['mensaje'];
         $respuestas = $_POST['respuestas'];
         $identificador = $_POST['identificador'];
-        $fecha = date("d,m,y");
+        $fecha =  date("d,m,y");
 
 
         //Evitamos que el usuario ingrese HTML

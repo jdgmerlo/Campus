@@ -30,7 +30,9 @@ if (empty($_SESSION['nombre'])) {
     </head>
     <body>
 
-        <?php include("../header.php"); ?>
+        <?php 
+        include("../header.php"); 
+        ?>
 
 
         <div class="row">

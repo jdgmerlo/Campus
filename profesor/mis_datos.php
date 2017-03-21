@@ -31,8 +31,8 @@ if (empty($_SESSION['nombre'])) {
     <body>
 
         <?php include("../header.php"); ?>
-
-
+        <br />
+        <br />
         <div class="row">
             <div class="col-md-2">
                 <?php include("../barra_navegacion.php"); ?>
