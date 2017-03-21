@@ -19,6 +19,7 @@ if ($dni == $fila['dni'] && $pass == $fila['password']) {
     $_SESSION['apellido'] = $fila['apellido'];
     $_SESSION['correo'] = $fila['correo'];
     $_SESSION['rol'] = $fila['rol'];
+    $_SESSION['id_profesor'] = $fila['id_profesor'];
 
     header("location:panel_inicio.php");
 } else {
