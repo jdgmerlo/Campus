@@ -4,7 +4,10 @@ include("PHPMailer/class.phpmailer.php");
 include("PHPMailer/class.smtp.php");
 
 $dni = $_POST['dni'];
+$rol = $_POST['rol'];
 
+$generador_pass = rand(0000, 9999);
+$pass_codificada = password_hash($generador_pass, PASSWORD_DEFAULT);
 
 try {
     $conexion = new PDO("mysql:host=localhost;dbname=campus", "root", "");
@@ -26,7 +29,7 @@ $fila = $consulta->fetch(PDO::FETCH_ASSOC);
 $dniRecuperado = $fila['dni'];
 
 if ($dniRecuperado == $dni) {
-    $passR = $fila['password'];
+    // $passR = $fila['password'];
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
@@ -40,15 +43,21 @@ if ($dniRecuperado == $dni) {
     $mail->FromName = "Plataforma Interactiva";
     $mail->Subject = "Recuperar Contraseña";
 //$mail->AltBody = "Para Completar Su Registro Debe Acceder Al Siguiente Enlace.";
-    $mail->msgHTML("La Contraseña Actual Es: $passR");
+    $mail->msgHTML("La Contraseña Actual Es: $generador_pass , Para Mas Seguridad Modificala Al Ingresar A Tu Cuenta. ");
 
     $mail->AddAddress($fila['correo'], "Destinatario");
     $mail->IsHTML(true);
 
+
+    $sql2 = "UPDATE $rol SET password = '$pass_codificada' WHERE dni = $dni ";
+    $agregar = $conexion->prepare($sql2);
+    $agregar->execute();
+
+
     if (!$mail->Send()) {
         echo "Error: " . $mail->ErrorInfo;
     } else {
-        header("location:index.php");
+        header("location:index.php?cambioPass=1");
         die();
     }
 } else {

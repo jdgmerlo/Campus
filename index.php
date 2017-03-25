@@ -69,6 +69,11 @@
                         echo " <h4><span class='label label-danger'>Ingreso Incorrecto. Verifique los Datos</span></h4>";
                     }
                     ?>
+                    <?php
+                    if (isset($_GET['cambioPass']) == 1) {
+                        echo " <h4><span class='label label-info'>Se Ha Enviado Una Contraseña Nueva A Tu Correo...</span></h4>";
+                    }
+                    ?>
                     <span class="label label-default">Ingreso</span>
                     <br />
                     <br />

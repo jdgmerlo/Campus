@@ -60,14 +60,21 @@
                     <form class="form-inline" method="post" action="recuperar_pass.php">
                         <div class="form-group">
                             <label class="sr-only" for="exampleInputEmail3">DNI</label>
-                            <input type="text" class="form-control" id="exampleInputEmail3" placeholder="D.N.I" name="dni">
+                            <input type="text" class="form-control" id="exampleInputEmail3"  required="required" placeholder="D.N.I" name="dni">
+
                         </div>
+                        <br />
+                        <br />
+                        <input type="radio" name="rol" value="alumnos" checked="checked"/>Alumno<br />
+                        <input type="radio" name="rol" value="profesor"/>Profesor
+                        <br />
+                        <br />
                         <button type="submit" class="btn btn-default">Enviar</button>
                     </form>
 
-            
-                    
-                    
+
+
+
 
 
                 </div>
