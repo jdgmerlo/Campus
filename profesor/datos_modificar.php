@@ -42,8 +42,6 @@ if (empty($_SESSION['nombre'])) {
             </div>
 
             <div class="col-md-8">
-
-
                 <form class="form-horizontal" method="post" action="correo_proceso.php">
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">Correo</label>

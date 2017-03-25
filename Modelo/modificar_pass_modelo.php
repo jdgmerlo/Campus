@@ -4,6 +4,9 @@ $pass_actual = $_POST['pass_actual'];
 $pass_nueva = $_POST['pass_nueva'];
 $dni = $_SESSION['dni'];
 
+$pas_codificada = password_hash($pass_nueva, PASSWORD_DEFAULT);
+
+
 class Modificar_Pass{
     
     private $conexion;
@@ -21,6 +24,7 @@ class Modificar_Pass{
         global $pass_actual;
         global $pass_nueva;
         global $dni;
+        global $pas_codificada;
         
         
         
@@ -31,12 +35,11 @@ class Modificar_Pass{
         
         $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
 
-
-        if($resultado['password'] == $pass_actual){
-          
-            
-            
-            $query2 = "UPDATE alumnos SET password = '$pass_nueva' WHERE dni = :DNI";
+        $verifica_pass = password_verify($pass_actual, $resultado['password']);
+        
+        if($verifica_pass){
+         
+            $query2 = "UPDATE alumnos SET password = '$pas_codificada' WHERE dni = :DNI";
             $consulta2 = $this->conexion->prepare($query2);
             $consulta2->bindParam(":DNI", $_SESSION['dni']);
             $consulta2->execute();

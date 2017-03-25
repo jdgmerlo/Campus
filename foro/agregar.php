@@ -18,7 +18,7 @@ if (isset($_POST["submit"])) {
         echo $identificador;
 
         //Grabamos el mensaje en la base de datos.
-        $query = "INSERT INTO foroSistemas (autor, titulo, mensaje, identificador, fecha, ult_respuesta) VALUES ('$autor', '$titulo', '$mensaje', '$identificador','$fecha','$fecha')";
+        $query = "INSERT INTO foroSistemas (autor, titulo, mensaje, identificador, fecha, ult_respuesta) VALUES ('$autor', '$titulo', '$mensaje', '$identificador',now(),'$fecha')";
 
         echo $query;
         echo "identificador:";

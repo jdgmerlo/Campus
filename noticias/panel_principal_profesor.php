@@ -43,7 +43,7 @@ if (empty($_SESSION['nombre'])) {
                     <br />
                     <p class="help-block">Seleccionar Carrera.</p>
                     <select class="form-control" name="seleccionCarrera">
-                        <option value="Smbientales">Ambientales</option>
+                        <option value="Ambientales">Ambientales</option>
                         <option value="Clinicos">Clinicos</option>
                         <option value="Contables">Contable</option>
                         <option value="Sistemas">Sistemas</option>

@@ -1,22 +1,29 @@
 <?php
+
 session_start();
 $passActual = $_POST['pass_actual'];
 $passNueva = $_POST['pass_nueva'];
+$dni = $_SESSION['dni'];
+
+$pass_codd = password_hash($passNueva, PASSWORD_DEFAULT);
 
 require("conexion.php");
 
-$query = "SELECT password FROM profesor WHERE dni = :DNI";
+$query = "SELECT dni, password FROM profesor WHERE dni = '$dni'";
 $consulta = $conexionProfesor->prepare($query);
-$consulta->bindParam(":DNI", $_SESSION['dni']);
+
 $consulta->execute();
 
 $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
 
-if ($resultado['password'] == $passActual) {
 
-    $query2 = "UPDATE profesor SET password = :PASS";
+$ver_pass = password_verify($passActual, $resultado['password']);
+
+if ($ver_pass) {
+
+    $query2 = "UPDATE profesor SET password = '$pass_codd' WHERE dni = :DNI";
     $consulta2 = $conexionProfesor->prepare($query2);
-    $consulta2->bindParam(":PASS", $passNueva);
+    $consulta2->bindParam(":DNI", $dni);
     $consulta2->execute();
 
     header("location:panel_inicio.php?var=7");
